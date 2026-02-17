@@ -12,9 +12,15 @@ const montserrat = Montserrat({
 });
 
 export const metadata: Metadata = {
-  title: "Delux Fence | Architectural-Grade Aluminum Fencing",
+  title: "DeluxFence | Architectural-Grade Aluminum Fencing",
   description:
-    "Maintenance-free luxury aluminum fencing for American homes. Engineered for elegance, built for eternity.",
+    "Maintenance-free luxury aluminum fencing for American homes. One fence system for every setting—backyards, pools, suburban borders. Request a quote.",
+  keywords: ["aluminum fence", "fence systems", "luxury fence", "pool fence", "residential fence", "DeluxFence"],
+  openGraph: {
+    title: "DeluxFence | Architectural-Grade Aluminum Fencing",
+    description: "Maintenance-free luxury aluminum fencing for American homes. Engineered for elegance, built for eternity.",
+    type: "website",
+  },
 };
 
 export default function RootLayout({

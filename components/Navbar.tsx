@@ -10,7 +10,9 @@ const NAV_LINKS = [
   { href: "/projects", label: "Projects" },
   { href: "/gallery", label: "Gallery" },
   { href: "#why-aluminum", label: "Why Aluminum" },
+  { href: "/#quote-calculator", label: "Quote Calculator" },
   { href: "/#contact", label: "Contact" },
+  { href: "/api/catalog/pdf", label: "Catalog (PDF)", external: true },
 ];
 
 export default function Navbar() {
@@ -44,12 +46,23 @@ export default function Navbar() {
         <ul className="hidden items-center gap-8 md:flex">
           {NAV_LINKS.map((link) => (
             <li key={link.href}>
-              <Link
-                href={link.href}
-                className="text-sm font-medium text-white/90 transition-colors hover:text-white"
-              >
-                {link.label}
-              </Link>
+              {link.external ? (
+                <a
+                  href={link.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm font-medium text-white/90 transition-colors hover:text-white"
+                >
+                  {link.label}
+                </a>
+              ) : (
+                <Link
+                  href={link.href}
+                  className="text-sm font-medium text-white/90 transition-colors hover:text-white"
+                >
+                  {link.label}
+                </Link>
+              )}
             </li>
           ))}
         </ul>
@@ -96,13 +109,25 @@ export default function Navbar() {
               <ul className="flex flex-col gap-1 px-6 pt-[calc(var(--nav-height)+1rem)] pb-6">
                 {NAV_LINKS.map((link) => (
                   <li key={link.href}>
-                    <Link
-                      href={link.href}
-                      className="block rounded-md px-4 py-3 text-base font-medium text-white/90 hover:bg-white/5 hover:text-white"
-                      onClick={() => setIsMobileMenuOpen(false)}
-                    >
-                      {link.label}
-                    </Link>
+                    {link.external ? (
+                      <a
+                        href={link.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="block rounded-md px-4 py-3 text-base font-medium text-white/90 hover:bg-white/5 hover:text-white"
+                        onClick={() => setIsMobileMenuOpen(false)}
+                      >
+                        {link.label}
+                      </a>
+                    ) : (
+                      <Link
+                        href={link.href}
+                        className="block rounded-md px-4 py-3 text-base font-medium text-white/90 hover:bg-white/5 hover:text-white"
+                        onClick={() => setIsMobileMenuOpen(false)}
+                      >
+                        {link.label}
+                      </Link>
+                    )}
                   </li>
                 ))}
                 <li className="mt-2 border-t border-white/10 pt-4">
