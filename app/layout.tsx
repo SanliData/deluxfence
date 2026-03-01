@@ -12,6 +12,7 @@ const montserrat = Montserrat({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://deluxfences.com"),
   title: "DeluxFence | Architectural-Grade Aluminum Fencing",
   description:
     "Maintenance-free luxury aluminum fencing for American homes. One fence system for every setting—backyards, pools, suburban borders. Request a quote.",
@@ -20,6 +21,7 @@ export const metadata: Metadata = {
     title: "DeluxFence | Architectural-Grade Aluminum Fencing",
     description: "Maintenance-free luxury aluminum fencing for American homes. Engineered for elegance, built for eternity.",
     type: "website",
+    url: "https://deluxfences.com",
   },
 };
 

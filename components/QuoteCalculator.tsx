@@ -3,16 +3,27 @@
 import { useState } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { Ruler, Calculator } from "lucide-react";
+import { Ruler, Calculator, LayoutGrid } from "lucide-react";
+
+const FENCE_MODELS = [
+  { id: "horizontal-slat", label: "Horizontal Slat", panelFt: 8 },
+  { id: "privacy-louvered", label: "Privacy / Louvered", panelFt: 8 },
+  { id: "gate", label: "Gate", panelFt: 12 },
+  { id: "glass-railing", label: "Glass Railing", panelFt: 6 },
+  { id: "composite-wood", label: "Composite & Wood Accent", panelFt: 8 },
+  { id: "concrete-slat", label: "Concrete Base & Slat", panelFt: 8 },
+] as const;
 
 export default function QuoteCalculator() {
   const [lengthFt, setLengthFt] = useState("");
   const [heightFt, setHeightFt] = useState("");
+  const [modelId, setModelId] = useState<string>(FENCE_MODELS[0].id);
 
   const length = Number(lengthFt) || 0;
   const height = Number(heightFt) || 6;
+  const selectedModel = FENCE_MODELS.find((m) => m.id === modelId) ?? FENCE_MODELS[0];
   const linearFeet = length > 0 ? length : 0;
-  const estimatedPanels = length > 0 ? Math.ceil(length / 8) : 0; // ~8 ft per panel
+  const estimatedPanels = length > 0 ? Math.ceil(length / selectedModel.panelFt) : 0;
 
   return (
     <section
@@ -40,7 +51,29 @@ export default function QuoteCalculator() {
             </div>
           </div>
 
-          <div className="grid gap-4 sm:grid-cols-2">
+          <div className="space-y-4">
+            <div>
+              <label
+                htmlFor="model"
+                className="mb-1 flex items-center gap-2 text-sm font-medium text-white/90"
+              >
+                <LayoutGrid size={16} />
+                Model
+              </label>
+              <select
+                id="model"
+                value={modelId}
+                onChange={(e) => setModelId(e.target.value)}
+                className="w-full rounded-lg border border-white/20 bg-white/10 px-4 py-3 text-white focus:border-gold focus:outline-none focus:ring-1 focus:ring-gold"
+              >
+                {FENCE_MODELS.map((m) => (
+                  <option key={m.id} value={m.id} className="bg-anthracite text-white">
+                    {m.label}
+                  </option>
+                ))}
+              </select>
+            </div>
+            <div className="grid gap-4 sm:grid-cols-2">
             <div>
               <label
                 htmlFor="length-ft"
@@ -80,6 +113,7 @@ export default function QuoteCalculator() {
                 className="w-full rounded-lg border border-white/20 bg-white/10 px-4 py-3 text-white placeholder-white/40 focus:border-gold focus:outline-none focus:ring-1 focus:ring-gold"
               />
             </div>
+            </div>
           </div>
 
           {linearFeet > 0 && (
@@ -89,9 +123,11 @@ export default function QuoteCalculator() {
               className="mt-6 rounded-lg border border-gold/30 bg-gold/10 p-4"
             >
               <p className="text-sm font-medium text-gold">
+                Model: <strong>{selectedModel.label}</strong>
+                {" · "}
                 Estimated linear feet: <strong>{linearFeet} ft</strong>
                 {estimatedPanels > 0 && (
-                  <> · Approx. {estimatedPanels} panels (8 ft typical)</>
+                  <> · Approx. {estimatedPanels} panels ({selectedModel.panelFt} ft typical)</>
                 )}
               </p>
               <p className="mt-1 text-xs text-white/70">

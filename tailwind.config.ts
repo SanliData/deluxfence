@@ -13,6 +13,10 @@ const config: Config = {
         gold: "#D4AF37",
         "gold-hover": "#B8962E",
         "anthracite-light": "#34495E",
+        "lux-parliament": "#1B365D",
+        "lux-navy": "#0F1729",
+        "lux-gold": "#E8B923",
+        "lux-gold-hover": "#F5C842",
       },
       fontFamily: {
         sans: ["var(--font-montserrat)", "system-ui", "sans-serif"],

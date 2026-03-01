@@ -118,7 +118,7 @@ This project is licensed under the MIT License—see the [LICENSE](LICENSE) file
 After deploying (e.g. Vercel, Netlify, or GitHub Pages with static export), add your live URL here:
 
 ```text
-Demo: https://your-deluxfence-demo.vercel.app
+**Live site:** [https://deluxfences.com](https://deluxfences.com)
 ```
 
 ---

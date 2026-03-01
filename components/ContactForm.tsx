@@ -4,6 +4,9 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { Send, MapPin, Phone, Mail } from "lucide-react";
 
+const WHATSAPP_NUMBER = "+1 (631) 522-3785";
+const WHATSAPP_LINK = "https://wa.me/16315223785";
+
 export default function ContactForm() {
   const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
   const [formData, setFormData] = useState({
@@ -68,10 +71,10 @@ export default function ContactForm() {
               <div>
                 <p className="font-medium text-white">Email</p>
                 <a
-                  href="mailto:info@deluxfence.com"
+                  href="mailto:info@deluxfences.com"
                   className="text-white/80 hover:text-gold"
                 >
-                  info@deluxfence.com
+                  info@deluxfences.com
                 </a>
               </div>
             </div>
@@ -80,12 +83,22 @@ export default function ContactForm() {
                 <Phone size={22} />
               </span>
               <div>
-                <p className="font-medium text-white">Phone</p>
+                <p className="font-medium text-white">Phone / WhatsApp</p>
                 <a
-                  href="tel:+14699263405"
-                  className="text-white/80 hover:text-gold"
+                  href={WHATSAPP_LINK}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-white/80 hover:text-gold block"
                 >
-                  +1 (469) 926-3405
+                  {WHATSAPP_NUMBER}
+                </a>
+                <a
+                  href={WHATSAPP_LINK}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-1 inline-block text-sm text-gold hover:underline"
+                >
+                  Chat on WhatsApp →
                 </a>
               </div>
             </div>

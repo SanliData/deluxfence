@@ -14,8 +14,9 @@ import {
 } from "@react-pdf/renderer";
 
 const CONTACT = {
-  phone: "+1 (469) 926-3405",
-  email: "info@deluxfence.com",
+  phone: "+1 (631) 522-3785",
+  whatsapp: "WhatsApp: +1 (631) 522-3785",
+  email: "info@deluxfences.com",
   address: "USA · Serving luxury homeowners nationwide",
 };
 
@@ -123,7 +124,7 @@ function CatalogDocument({ imageSources }: { imageSources: (string | null)[] }) 
           <Text style={styles.contactLine}>{CONTACT.address}</Text>
         </View>
         <Text style={{ marginTop: 24, fontSize: 11, color: "#7f8c8d" }}>
-          Request a free quote at deluxfence.com or contact us directly.
+          Request a free quote at deluxfences.com or contact us directly.
         </Text>
         <View style={styles.footer}>
           <Text>DeluxFence · Architectural-Grade Aluminum Fencing</Text>

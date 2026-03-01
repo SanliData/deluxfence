@@ -1,6 +1,6 @@
 # AI Image Generation Prompt – Aluminum Fence
 
-Use this prompt with your preferred AI image generator (e.g. DALL·E, Midjourney, Gemini, Stable Diffusion) to create high-quality, on-brand fence imagery for deluxfence.com.
+Use this prompt with your preferred AI image generator (e.g. DALL·E, Midjourney, Gemini, Stable Diffusion) to create high-quality, on-brand fence imagery for deluxfences.com.
 
 ---
 

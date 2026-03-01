@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 
@@ -30,16 +31,28 @@ export default function Navbar() {
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? "bg-anthracite/90 backdrop-blur-md shadow-lg" : "bg-transparent"
+        isScrolled
+          ? "bg-gradient-to-r from-lux-navy via-lux-parliament to-lux-parliament/95 backdrop-blur-md shadow-lg"
+          : "bg-transparent"
       }`}
     >
       <nav className="mx-auto flex h-[var(--nav-height)] max-w-[var(--container-max)] items-center justify-between px-6 lg:px-8">
-        {/* Logo */}
+        {/* Logo – 6x büyük, hover’da büyür; tıklanınca ana sayfa */}
         <Link
           href="/"
-          className="text-xl font-semibold tracking-tight text-white transition-opacity hover:opacity-90"
+          className="group relative flex shrink-0 items-center"
+          aria-label="Delux Fences – Ana sayfa"
         >
-          Delux<span className="text-gold">Fence</span>
+          <span className="block origin-left transition-transform duration-300 ease-out group-hover:scale-110">
+            <Image
+              src="/images/logo.png"
+              alt="Delux Fences"
+              width={360}
+              height={96}
+              className="h-[60px] w-auto object-contain sm:h-[72px]"
+              priority
+            />
+          </span>
         </Link>
 
         {/* Desktop nav links */}
