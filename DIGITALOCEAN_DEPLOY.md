@@ -124,6 +124,8 @@ npm run build
 pm2 restart deluxfences
 ```
 
+**SEO routes:** `/robots.txt` and `/sitemap.xml` are served by Next.js (metadata routes + static fallbacks in `public/`). Ensure Nginx proxies all requests to the app (no separate `location` for `.txt`/`.xml` that could return 404). After deploy, test: `curl -I https://deluxfences.com/robots.txt` and `https://deluxfences.com/sitemap.xml`.
+
 Or use the GitHub Actions auto-deploy (see repo `.github/workflows/deploy.yml`) with SSH secrets configured.
 
 ---
