@@ -13,15 +13,41 @@ const montserrat = Montserrat({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://deluxfences.com"),
-  title: "DeluxFence | Architectural-Grade Aluminum Fencing",
+  title: "DeluxFences | Luxury Aluminum Fencing & Modern Gates",
   description:
-    "Maintenance-free luxury aluminum fencing for American homes. One fence system for every setting—backyards, pools, suburban borders. Request a quote.",
-  keywords: ["aluminum fence", "fence systems", "luxury fence", "pool fence", "residential fence", "DeluxFence"],
+    "Premium architectural-grade aluminum fencing solutions in Dallas and across the USA.",
+  keywords: [
+    "aluminum fence",
+    "luxury fence",
+    "modern gates",
+    "Dallas fence",
+    "horizontal slat fence",
+    "privacy fence",
+    "architectural fence",
+    "DeluxFences USA",
+  ],
   openGraph: {
-    title: "DeluxFence | Architectural-Grade Aluminum Fencing",
-    description: "Maintenance-free luxury aluminum fencing for American homes. Engineered for elegance, built for eternity.",
+    title: "DeluxFences | Luxury Aluminum Fencing & Modern Gates",
+    description:
+      "Premium architectural-grade aluminum fencing solutions in Dallas and across the USA.",
     type: "website",
     url: "https://deluxfences.com",
+    siteName: "DeluxFences USA",
+    locale: "en_US",
+    images: [
+      {
+        url: "/images/fence/fence-3.png",
+        width: 1200,
+        height: 630,
+        alt: "Modern black aluminum fence and gate with luxury home",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "DeluxFences | Luxury Aluminum Fencing & Modern Gates",
+    description:
+      "Premium architectural-grade aluminum fencing solutions in Dallas and across the USA.",
   },
 };
 

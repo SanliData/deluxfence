@@ -54,15 +54,15 @@ export default function Hero() {
           variants={item}
           className="mb-5 max-w-4xl mx-auto text-white font-bold tracking-tight drop-shadow-md"
         >
-          Redefine Your Boundaries
+          Architectural-Grade Aluminum Fencing &amp; Modern Gates
         </motion.h1>
 
         <motion.p
           variants={item}
           className="mx-auto mb-10 max-w-2xl text-lg leading-relaxed text-white/95 sm:text-xl"
         >
-          Architectural-grade aluminum fencing. Engineered for elegance, built for
-          eternity. Maintenance-free luxury for your American home.
+          Redefine your boundaries. Engineered for elegance, built for eternity.
+          Maintenance-free luxury for your American home.
         </motion.p>
 
         <motion.div
