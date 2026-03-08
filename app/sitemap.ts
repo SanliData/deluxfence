@@ -1,14 +1,15 @@
 import type { MetadataRoute } from "next";
 
-const BASE = "https://deluxfences.com";
-
 export default function sitemap(): MetadataRoute.Sitemap {
-  const routes = [
-    { url: BASE, lastModified: new Date(), changeFrequency: "weekly" as const, priority: 1 },
-    { url: `${BASE}/products`, lastModified: new Date(), changeFrequency: "monthly" as const, priority: 0.9 },
-    { url: `${BASE}/gallery`, lastModified: new Date(), changeFrequency: "monthly" as const, priority: 0.9 },
-    { url: `${BASE}/projects`, lastModified: new Date(), changeFrequency: "monthly" as const, priority: 0.8 },
-    { url: `${BASE}/why-aluminum`, lastModified: new Date(), changeFrequency: "monthly" as const, priority: 0.8 },
+  const base = "https://deluxfences.com";
+
+  return [
+    { url: `${base}/`, lastModified: new Date() },
+    { url: `${base}/products`, lastModified: new Date() },
+    { url: `${base}/projects`, lastModified: new Date() },
+    { url: `${base}/gallery`, lastModified: new Date() },
+    { url: `${base}/why-aluminum`, lastModified: new Date() },
+    { url: `${base}/quote-calculator`, lastModified: new Date() },
+    { url: `${base}/contact`, lastModified: new Date() },
   ];
-  return routes;
 }
